@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://x0inxslvum8m"]
+
+[ext_resource type="Script" path="res://scripts/scene.cs" id="1_2fes7"]
+[ext_resource type="ArrayMesh" uid="uid://sxq6nsbbcups" path="res://hj.obj" id="1_cxfyx"]
+[ext_resource type="PackedScene" uid="uid://bosnbo5mheuhv" path="res://models/player.tscn" id="2_je8jv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ku15e"]
+data = PackedVector3Array(0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 1, 0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, -0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_2fes7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_je8jv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.590243, 1.46338, 0.447752)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Hj" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.518145, 0, 0.650015)
+mesh = ExtResource("1_cxfyx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.518145, 0, 0.650015)
+shape = SubResource("ConcavePolygonShape3D_ku15e")

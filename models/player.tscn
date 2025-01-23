@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bosnbo5mheuhv"]
+
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_h113l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hycm8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7n8t"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_h113l")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612603, 0.0299782)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_hycm8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_k7n8t")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+spot_range = 9.915
+spot_angle = 15.86

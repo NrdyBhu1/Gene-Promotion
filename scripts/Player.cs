@@ -5,7 +5,7 @@ public partial class Player : CharacterBody3D
 {
 	
 	[Export]
-	public int Speed { get; set; } = 14;
+	public int Speed { get; set; } = 5;
 	
 	[Export]
 	public int FallAcceleration { get; set; } = 75;

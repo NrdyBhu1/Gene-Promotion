@@ -41,6 +41,22 @@ light_size = 0.202
 shadow_enabled = true
 omni_range = 36.229
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8131, 6.50027, 23.234)
+light_energy = 5.225
+light_indirect_energy = 16.0
+light_size = 0.202
+shadow_enabled = true
+omni_range = 36.229
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0919, 6.50027, 6.85363)
+light_energy = 5.225
+light_indirect_energy = 16.0
+light_size = 0.202
+shadow_enabled = true
+omni_range = 36.229
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3565, 6.50027, 23.8539)
 light_color = Color(0.87451, 0.964706, 0.0784314, 1)

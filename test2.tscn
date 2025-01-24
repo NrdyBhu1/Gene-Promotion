@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://x0inxslvum8m"]
 
-[ext_resource type="Script" path="res://scripts/scene.cs" id="1_2fes7"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="1_nocfr"]
 [ext_resource type="PackedScene" uid="uid://bosnbo5mheuhv" path="res://models/player.tscn" id="2_je8jv"]
 [ext_resource type="PackedScene" uid="uid://clm4wuuguml5p" path="res://models/surface.tscn" id="3_sdne2"]
 [ext_resource type="PackedScene" uid="uid://dy0tm8sgg53cw" path="res://models/interactable/paper.tscn" id="4_p33g0"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bd02ru54xt8em" path="res://models/bed-2.tscn" id="6_dhv7w"]
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_2fes7")
+script = ExtResource("1_nocfr")
 
 [node name="Player" parent="." instance=ExtResource("2_je8jv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0497, 1.46338, 22.9162)
@@ -39,8 +39,7 @@ transform = Transform3D(-8.30516e-09, 0.4, -7.20657e-09, 0, -1.74846e-08, -0.164
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4017, 6.50027, 23.234)
 light_color = Color(1, 0.766, 0.48, 1)
-light_energy = 5.225
-light_indirect_energy = 16.0
+light_energy = 0.775
 light_size = 0.202
 shadow_enabled = true
 omni_range = 36.229
@@ -77,5 +76,5 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -22.8608, 0.25, -1.7
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -23.4964, 0.73528, 22.5824)
 
 [node name="bed2" parent="." instance=ExtResource("6_dhv7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4484, 0.692581, 23.4613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0881, 0.692581, 23.1637)
 collision_layer = 2

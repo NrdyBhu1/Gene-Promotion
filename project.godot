@@ -12,8 +12,10 @@ config_version=5
 
 config/name="Gene-Promotion"
 run/main_scene="res://test2.tscn"
-config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://art/png/paper.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=30
 
 [dotnet]
 

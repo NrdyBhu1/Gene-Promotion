@@ -8,11 +8,14 @@ signal interact_object
 var target_velocity :Vector3 = Vector3.ZERO
 var cam : Camera3D
 var raycast : RayCast3D
+var text_label : Label
 
 func _ready():
 	cam = get_node("Camera3D")
 	raycast = get_node("RayCast3D")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	text_label = get_parent().get_node("Control/Label")
+	text_label.text = ""
 	
 func _input(event):
 	if (event is InputEventMouseMotion):
@@ -20,9 +23,12 @@ func _input(event):
 
 func _process(_delta):
 	if (raycast.is_colliding()):
-		emit_signal("interact_object", raycast.get_collider())
+		var collider = raycast.get_collider()
+		emit_signal("interact_object", collider)
+		text_label.text = collider.obj_name
 	else:
 		emit_signal("interact_object", null)
+		text_label.text = ""
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO;

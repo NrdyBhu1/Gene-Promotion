@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://r5hyppgfmhtx"]
+
+[ext_resource type="Script" path="res://scripts/scene.gd" id="1_cdal1"]
+[ext_resource type="PackedScene" uid="uid://clm4wuuguml5p" path="res://models/surface.tscn" id="1_dgwf8"]
+[ext_resource type="PackedScene" uid="uid://bosnbo5mheuhv" path="res://models/player.tscn" id="2_g6hyf"]
+[ext_resource type="PackedScene" uid="uid://duciqr3qqln4r" path="res://models/control.tscn" id="3_1x7t5"]
+[ext_resource type="Texture2D" uid="uid://b782h7ed5pwpe" path="res://art/textures/wood/wood_0009_color_1k.jpg" id="3_dlff3"]
+[ext_resource type="Texture2D" uid="uid://ddwrjovfrb7gp" path="res://art/textures/wood/wood_0009_normal_directx_1k.png" id="4_rtsda"]
+[ext_resource type="PackedScene" uid="uid://bx51ondk78gt4" path="res://models/omni_light_3d_3.tscn" id="5_xtn3j"]
+[ext_resource type="PackedScene" uid="uid://bd02ru54xt8em" path="res://models/bed-2.tscn" id="6_1u1dn"]
+[ext_resource type="Script" path="res://scripts/bed2.gd" id="7_yy4cv"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7xqym"]
+albedo_texture = ExtResource("3_dlff3")
+normal_enabled = true
+normal_texture = ExtResource("4_rtsda")
+uv1_scale = Vector3(10, 10, 10)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_cdal1")
+
+[node name="Floor" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73393, 0, 6.53421)
+
+[node name="MeshInstance3D" parent="Floor" index="0"]
+surface_material_override/0 = SubResource("ORMMaterial3D_7xqym")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.195385, 0.798212, -0.569809, -0.488128, 0.424779, 0.762426, 0.850621, 0.427106, 0.306634, -14.6302, 5.69155, 12.7879)
+
+[node name="bedroom_wall" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(-4.15258e-09, -1, 0, 0.095, -4.37114e-08, 0, 0, 0, 0.18, -10.806, 2.64891, 23.8617)
+
+[node name="bedroom_wall3" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(1.81515e-16, 4.37114e-08, -0.25, 0.095, -4.37114e-08, 0, -4.15258e-09, -1, -1.09278e-08, -10.889, 2.649, 16.447)
+
+[node name="bedroom_wall2" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(1.81515e-16, 4.37114e-08, -0.25, 0.095, -4.37114e-08, 0, -4.15258e-09, -1, -1.09278e-08, -4.336, 2.649, 26.2438)
+
+[node name="Player" parent="." instance=ExtResource("2_g6hyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9403, 1.08579, 29.3992)
+
+[node name="Surface" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(-3.93403e-09, -1, 0, 0.09, -4.37114e-08, 0, 0, 0, 1, -17.359, 2.481, 6.535)
+
+[node name="Surface2" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(-3.93403e-09, -1, 0, 0.09, -4.37114e-08, 0, 0, 0, 1, 32.861, 2.481, 6.535)
+
+[node name="Surface3" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(4.91706e-16, 4.37114e-08, -1, 0.09, -4.37114e-08, 0, -3.93403e-09, -1, -4.37114e-08, 7.766, 2.481, -18.592)
+
+[node name="Surface4" parent="." instance=ExtResource("1_dgwf8")]
+transform = Transform3D(4.91706e-16, 4.37114e-08, -1, 0.09, -4.37114e-08, 0, -3.93403e-09, -1, -4.37114e-08, 7.736, 2.481, 31.661)
+
+[node name="Control" parent="." instance=ExtResource("3_1x7t5")]
+
+[node name="OmniLight3D3" parent="." instance=ExtResource("5_xtn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18081, 4.69386, 23.7366)
+
+[node name="OmniLight3D4" parent="." instance=ExtResource("5_xtn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5007, 3.95155, 17.3869)
+
+[node name="OmniLight3D5" parent="." instance=ExtResource("5_xtn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2674, 4.82109, -17.3607)
+
+[node name="bed2" parent="." instance=ExtResource("6_1u1dn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.3807, 0.802571, 24.3452)
+script = ExtResource("7_yy4cv")
+
+[editable path="Floor"]
+[editable path="Surface"]

@@ -114,6 +114,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2674, 4.82109, -17.3607)
 
 [node name="bed2" parent="." instance=ExtResource("6_1u1dn")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.3807, 0.802571, 24.3452)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("7_yy4cv")
 
 [node name="Mirror" type="Node3D" parent="."]
